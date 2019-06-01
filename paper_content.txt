@@ -1,0 +1,71 @@
+The Internet Management Standards defines a network
+management framework for TCP/IP-based internets [3].
+The framework includes the simple network management
+protocol (SNMP), a structure of management information,
+and a management information base (MIB). The
+organization model of the SNMP clusters all active
+entities in the network in two types: Network
+Management Stations (NMS) and agents. In Internet the
+details of objects, reflecting the static and dynamic states
+of managed resources, are stored in a logical database
+known as the MIB. This management information can be
+accessed via SNMP and is available at each manager and
+agent node. To maintain a sufficiently accurate view of
+the network, the NMS may need to poll agents frequently
+for different network statistics. The agents are simple
+software processes that live on every managed node,
+collecting, forwarding and setting MIB entries, either at
+predefined intervals or when requested to by the NMS.
+The NMS and SNMP agents communicate using the
+SNMP communication capabilities.
+With the increasing amount of information that SNMP
+agents maintain (could be as much as 500 MIB entries),
+the bandwidth and computation time consumed during
+transfer and processing of such bulky data is a concern.
+
+https://pdfs.semanticscholar.org/481d/d8c78350abb7dbc05777011d0fb75c55480d.pdf
+
+
+atleast for modeling :
+(2.6. Detection of Intermittent Faults
+In the case of intermittent faults, once it is observed that an intermittent fault has occurred in a node,
+ the node starts noticing the fault for a length of time until it reappears again; this length of time 
+ is called the fault appearance duration (FAD). The errors that reappear due to permanent faults or 
+ correlated intermittent faults reappear after what is called the fault disappearance duration (FDD) 
+ (see Figure 6). Intermittent faults are further categorised by considering their measurements, and 
+then estimating their disappearance and reappearance at discrete time intervals, such as kT 
+for kT = 1, 2, …, kmax (see 
+
+for WSN :https://www.ncbi.nlm.nih.gov/pmc/articles/PMC6021939/)
+
+
+
+
+
+
+
+Bayesian networks :
+Automated Proactive Anomaly Detection 
+
+https://link.springer.com/content/pdf/10.1007%2F978-0-387-35180-3_51.pdf
+
+
+
+Monitoring the Network Monitoring System:
+Anomaly Detection using Pattern Recognition
+https://perso.telecom-bretagne.eu/gwendalsimon/data/final-im-amnet.pdf 
+(useful for modeling also
+frequency transform,mean vector distance measures)
+
+
+infinera and CTL
+https://www.infinera.com/centurylink-and-infinera-on-the-path-toward-the-cognitive-network/
+
+
+
+
+
+
+
+
+
