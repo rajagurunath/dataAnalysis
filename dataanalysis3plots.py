@@ -148,7 +148,7 @@ def make_figure(nodename,start_date,end_date,x, color, signal_type, facet_row):
     # fig.layout.template='ggplot2'
     return fig
 
-app.run_server(debug=True,port=8051)
+app.run_server(debug=True,port=8052)
 
 
 # fig.append_trace(trace2, 1, 2)

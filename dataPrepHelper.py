@@ -5,6 +5,15 @@ import sys
 import os
 from tqdm import tqdm
 
+# from statsmodels.tsa.seasonal import seasonal_decompose
+# series = ...
+# result = seasonal_decompose(series, model='additive')
+# print(result.trend)
+# print(result.seasonal)
+# print(result.resid)
+# print(result.observed)
+
+
 DATA_DIR="D:\experiments\data\Research_data\ochctp"
 PM_DIR=os.path.join(DATA_DIR,"ochctp.csv")
 

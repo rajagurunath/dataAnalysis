@@ -37,7 +37,7 @@ collist=['ChanOchOprAve','ChanOchLBCAve','ChanOchChromaticDispersionAve','BerPre
 
 global df
 df=pd.DataFrame()
-df=pd.read_csv(os.path.join(DATA_DIR,"pivoted_ochctp.csv"))
+df=pd.read_feather(os.path.join(DATA_DIR,"pivoted_ochctp.feather"))
 col_options = [dict(label=x, value=x.lower()) for x in ["Ave","Min","Max"]]
 devnames=set(df['performance_metrics.module'].tolist())
 dev_options=[dict(label=x.split('.')[0],value=x)for x in devnames]
@@ -97,7 +97,8 @@ def make_figure(nodename,start_date,end_date,x, color, signal_type, facet_row):
     
     #df.columns=df.columns.str.lower()
     collist=df.columns[df.columns.str.lower().str.contains(signal_type)]
-    fig = tools.make_subplots(rows=len(collist), cols=1, subplot_titles=tuple(col for col in collist),
+    # collist=collist[:5]
+    fig = tools.make_subplots(rows=len(collist), cols=1, subplot_titles=tuple(nodename+" : "+col for col in collist),
      )
     
     #fig=[]
@@ -127,7 +128,7 @@ def make_figure(nodename,start_date,end_date,x, color, signal_type, facet_row):
         #     go.Scatter(x=df['performance_metrics.ts'], y=df[col]+1,name=col)]
         # fig.append_trace(go.Figure(data,layout=go.Layout(title=col)),col_no+1,1)
         fig.append_trace(go.Scatter(x=df['performance_metrics.ts'], y=df[col],name=col), col_no+1,1 )
-        fig['layout']['yaxis{}'.format(col_no+1)].update(dict(title='{}'.format(col)))
+        # fig['layout']['yaxis{}'.format(col_no+1)].update(dict(title='{}'.format(col)))
     fig['layout'].update(height=3000, width=1000,showlegend=False,
                  title='Device-{} visualization'.format(nodename))
     # fig['layout'].update( title='Subplots with Shared X-Axes')
@@ -145,7 +146,7 @@ def make_figure(nodename,start_date,end_date,x, color, signal_type, facet_row):
     #     height=700,
         
     # )
-    # fig.layout.template='ggplot2'
+    fig.layout.template='ggplot2'
     return fig
 
 app.run_server(debug=True,port=8051)
