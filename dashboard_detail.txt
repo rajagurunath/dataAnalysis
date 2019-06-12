@@ -1,0 +1,8 @@
+Alarm timing : 2019-02-01 17:48:39
+Severity: 0
+Device : 7-B-3-L1-6
+Summary: End of: Pre-FEC-Q value Out of range low ( Optical Channel Termination Point, 7-B-3-L1-6 )
+
+
+
+
